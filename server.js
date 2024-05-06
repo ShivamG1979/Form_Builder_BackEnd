@@ -12,14 +12,14 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
 
 // MongoDB setup
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO_URL, { 
   dbName: "FORM_BUILDER",
   useNewUrlParser: true,
   useUnifiedTopology: true,
